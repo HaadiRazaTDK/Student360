@@ -16,7 +16,7 @@ def tracking_GPA_target():
         student_data = fetch_student_data(reg_no, current_semester, is_bcs)
         if student_data is None:
             flash('No data found for the current semester.')
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('main.dashboard_bp.dashboard'))
 
         semester_courses = get_courses_by_semester(current_semester, is_bcs)
         gpa_targets = {}
