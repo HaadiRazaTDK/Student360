@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Over Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background: url('static/source/IMG_20240216_172123.jpg') no-repeat center center/cover;
+            color: #fff;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            width: 100%;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar ul li {
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .navbar ul li a:hover {
+            color: #1abc9c;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1abc9c;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            min-width: 200px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: 500;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #16a085;
+        }
+
+        .navbar ul li:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Main container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            /* Adjusted max-width for larger screens */
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin: 120px auto;
+            overflow-x: auto;
+            /* Allow horizontal scroll if content overflows */
+        }
+
+
+        h1 {
+            text-align: center;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #1abc9c;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            color: #f39c12;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        label {
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
+            font-size: 1.1em;
+        }
+
+        select,
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            font-size: 1em;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #1abc9c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #16a085;
+        }
+
+        /* Timetable styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #fff;
+        }
+
+        th {
+            background-color: #1abc9c;
+            color: #fff;
+        }
+
+        td {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Styling for the select dropdown options */
+        select {
+            background-color: rgba(255, 255, 255, 0.15);
+            /* Background for the select box */
+            color: #fff;
+            /* Text color */
+            border: none;
+            border-radius: 5px;
+            padding: 12px;
+            font-size: 1em;
+            appearance: none;
+            /* Hides the default dropdown arrow */
+            cursor: pointer;
+        }
+
+        select option {
+            background-color: black;
+            /* Background color for options */
+            color: rgb(243, 156, 18);
+            /* Text color for options */
+        }
+
+        /* Hover effect on options (works in some browsers like Firefox) */
+        select option:hover {
+            background-color: #16a085;
+        }
+
+        /* Make the table responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin-top: 80px;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            label {
+                font-size: 1em;
+            }
+
+            select,
+            input[type="number"] {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+
+            button {
+                font-size: 1em;
+            }
+
+            table th,
+            table td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <div class="navbar">
+        <ul>
+            <li><a href="{{ url_for('main.dashboard_bp.dashboard') }}">Dashboard</a></li>
+            <li><a href="{{url_for('main.result_card_bp.result_card')}}">Result Card</a></li>
+            <li>
+                <a href="#">Academic Planning</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('main.academic_performance_forcast_bp.academic_performance_forecast') }}">Academic
+                        Performance Forecast</a>
+                    <a href="{{ url_for('main.timely_graduation_forecast_bp.timely_graduation_forecast') }}">Timely
+                        Graduation Forecast</a>
+                    <a href="{{ url_for('main.challenging_courses_forecast_bp.challenging_courses_forecast') }}">Challenging
+                        Courses Forecast</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">Performance Track</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('main.performance_evaluation_metrics_bp.performance_evaluation_metrics') }}">Performance
+                        Evaluation Metrics</a>
+                    <a href="{{ url_for('main.tracking_GPA_target_bp.tracking_GPA_target') }}">Tracking GPA Target</a>
+                    <a href="{{ url_for('main.prerequisite_courses_impact_bp.prerequisite_courses_impact') }}">Prerequisite
+                        Courses Impact</a>
+                </div>
+            </li>
+            <li><a href="#">LLM Chatbot</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="{{ url_for('main.logout_bp.logout') }}">Logout</a></li>
+        </ul>
+    </div>
+
+
+    <!-- Main container -->
+    <div class="container">
+        <h1>Impact Over Registration</h1>
+
+        <!-- Form to select semester and course -->
+        <form method="POST" action="{{ url_for('main.prerequisite_courses_impact_bp.prerequisite_courses_impact') }}">
+            <label for="semester_select">Select a semester:</label>
+            <select name="selected_semester" id="semester_select">
+                <option value="">--Select a semester--</option>
+                {% for semester in semesters %}
+                <option value="{{ semester }}">{{ semester }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="course_select">Select a course:</label>
+            <select name="selected_course" id="course_select">
+                <option value="">--Select a course--</option>
+            </select>
+
+            <button type="submit">Check Impact</button>
+        </form>
+
+        <!-- Timetable container -->
+        <div class="container">
+            <h1>Impact Over Registration</h1>
+
+            <!-- Normal Timetable -->
+            {% if not impacted_timetable %}
+            <div class="results">
+                <h2>Normal Timetable</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            {% for semester in full_timetable %}
+                            <th>{{ semester }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in range(7) %}
+                        <tr>
+                            {% for semester, courses in full_timetable.items() %}
+                            <td>
+                                {% if row < courses|length %} {{ courses[row].Course }} {% else %} &nbsp; {% endif %}
+                                    </td>
+                                    {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+
+            <!-- Impacted timetable display -->
+            {% if impacted_timetable %}
+            <div class="results">
+                <h2>Impacted Timetable</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            {% for semester in impacted_timetable %}
+                            <th>{{ semester }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in range(7) %}
+                        <tr>
+                            {% for semester, courses in impacted_timetable.items() %}
+                            <td>
+                                {% if row < courses|length %} {{ courses[row].Course }} {% else %} &nbsp; {% endif %}
+                                    </td>
+                                    {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+        </div>
+
+
+        <!-- JavaScript for dynamic course selection -->
+        <script>
+            document.getElementById('semester_select').addEventListener('change', function () {
+                var semester = this.value;
+                var courseSelect = document.getElementById('course_select');
+
+                // Clear the current options
+                courseSelect.innerHTML = '<option value="">--Select a course--</option>';
+
+                if (semester !== "") {
+                    // Fetch the courses for the selected semester
+                    fetch(`/get_courses/${encodeURIComponent(semester)}`)
+                        .then(response => response.json())
+                        .then(courses => {
+                            courses.forEach(course => {
+                                var option = document.createElement('option');
+                                option.value = course;
+                                option.textContent = course;
+                                courseSelect.appendChild(option);
+                            });
+                        })
+                        .catch(error => {
+                            console.error('Error fetching courses:', error);
+                        });
+                }
+            });
+        </script>
+</body>
+
+</html>

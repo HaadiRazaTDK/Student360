@@ -1,0 +1,8 @@
+Semester1,Prerequisite1,CreditHours1,Semester2,Prerequisite2,CreditHours2,Semester3,Prerequisite3,CreditHours3,Semester4,Prerequisite4,CreditHours4,Semester5,Prerequisite5,CreditHours5,Semester6,Prerequisite6,CreditHours6,Semester7,Prerequisite7,CreditHours7,Semester8,Prerequisite8,CreditHours8,Semester9,Prerequisite9,CreditHours9,Semester10,Prerequisite10,CreditHours10,Semester11,Prerequisite11,CreditHours11,Semester12,Prerequisite12,CreditHours12
+hum100,none,3,csc103,none,4,hum103,hum100,3,mth231,none,3,csc339,none,4,csc350,none,3,csc455,csc253,3,bio310,none,4,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+phy121,none,4,eee241,none,4,csc241,csc103,4,csc291,none,3,csc336,csc241,4,csc321,eee241,3,csc356,none,3,mgt131,none,3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+hum110,none,3,mth104,none,3,csc211,csc103,4,csc322,csc211,3,csc462,csc102,3,csc475,mth104,3,csc483,none,3,csc499,csc498,4,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+csc101,none,3,csc110,none,3,mth105,mth104,3,csc371,csc241,4,csc301,csc211,3,csc303,csc241,3,csc498," csc371, csc291,csc241",2,hum434,none,3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+NULL,NULL,NULL,csc102,none,3,bio231,none,4,hum111,none,3,mth242,mth105,3,csc354,none,3,csc441,csc312,4,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+NULL,NULL,NULL,hum102,hum100,3,NULL,NULL,NULL,mth262,none,3,NULL,NULL,NULL,csc312,csc102,3,eee440,csc221,3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL

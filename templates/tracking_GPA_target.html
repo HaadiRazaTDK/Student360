@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking GPA Target</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background: url('static/source/IMG_20240216_172123.jpg') no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: #fff;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            width: 100%;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar ul li {
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .navbar ul li a:hover {
+            color: #1abc9c;
+        }
+
+        /* Dropdown styles */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1abc9c;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            min-width: 200px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: 500;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #16a085;
+        }
+
+        .navbar ul li:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Dropdown styles */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #34495e;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            min-width: 200px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .dropdown-content a {
+            color: #ecf0f1;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #1abc9c;
+        }
+
+        .navbar ul li:hover .dropdown-content {
+            display: block;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 900px;
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin: 120px auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 600;
+            color: #1abc9c;
+        }
+
+        h2,
+        h3 {
+            color: #f39c12;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        h3 {
+            color: #f1c40f;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        label {
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #fff;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1abc9c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #16a085;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 15px;
+            border-collapse: collapse;
+            color: #fff;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #fff;
+        }
+
+        th {
+            background-color: #1abc9c;
+            color: #fff;
+        }
+
+        td {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .info-label {
+            font-size: 14px;
+            margin-top: 10px;
+            display: inline-block;
+            color: #bdc3c7;
+        }
+
+        .highlight {
+            color: #f1c40f;
+            font-weight: bold;
+        }
+
+        .compact-text {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .remarks-highlight {
+            color: #f39c12;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <ul>
+            <li><a href="{{ url_for('main.dashboard_bp.dashboard') }}">Dashboard</a></li>
+            <li><a href="{{url_for('main.result_card_bp.result_card')}}">Result Card</a></li>
+            <li>
+                <a href="#">Academic Planning</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('main.academic_performance_forcast_bp.academic_performance_forecast') }}">Academic
+                        Performance Forecast</a>
+                    <a href="{{ url_for('main.timely_graduation_forecast_bp.timely_graduation_forecast') }}">Timely
+                        Graduation Forecast</a>
+                    <a href="{{ url_for('main.challenging_courses_forecast_bp.challenging_courses_forecast') }}">Challenging
+                        Courses Forecast</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">Performance Track</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('main.performance_evaluation_metrics_bp.performance_evaluation_metrics') }}">Performance
+                        Evaluation Metrics</a>
+                    <a href="{{ url_for('main.tracking_GPA_target_bp.tracking_GPA_target') }}">Tracking GPA Target</a>
+                    <a href="{{ url_for('main.prerequisite_courses_impact_bp.prerequisite_courses_impact') }}">Prerequisite
+                        Courses Impact</a>
+                </div>
+            </li>
+            <li><a href="#">LLM Chatbot</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="{{ url_for('main.logout_bp.logout') }}">Logout</a></li>
+        </ul>
+    </div>
+
+
+    <div class="container">
+        <h1>Track Your GPA Target</h1>
+        <form method="POST" action="{{ url_for('main.tracking_GPA_target_bp.tracking_GPA_target') }}">
+            {% for course in semester_courses %}
+            <label for="gpa_{{ course }}">{{ course }} - Target GPA</label>
+            <input type="number" name="gpa_{{ course }}" min="0" max="4.0" step="0.01" value="{{ gpa_targets[course] }}"
+                placeholder="Enter target GPA for {{ course }}">
+            {% endfor %}
+            <button type="submit">Submit GPA Targets</button>
+        </form>
+
+        {% if required_marks_per_course %}
+        <div class="results">
+            <h2>Marks Overview</h2>
+            {% for course, marks in required_marks_per_course.items() %}
+            <h3>{{ course }} - Target GPA: <span class="highlight">{{ gpa_targets[course] }}</span></h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Required Marks</th>
+                        <th>Achieved Marks</th>
+                        <th>Remarks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Quizzes -->
+                    <tr>
+                        <td>Quizzes</td>
+                        <td>{{ marks.quizzes | join(', ') }}</td>
+                        <td>{{ achieved_marks_per_course[course].quizzes | join(', ') }}</td>
+                        <td class="compact-text remarks-highlight">{{ remarks_per_course[course].quizzes }}</td>
+                    </tr>
+                    <!-- Assignments -->
+                    <tr>
+                        <td>Assignments</td>
+                        <td>{{ marks.assignments | join(', ') }}</td>
+                        <td>{{ achieved_marks_per_course[course].assignments | join(', ') }}</td>
+                        <td class="compact-text remarks-highlight">{{ remarks_per_course[course].assignments }}</td>
+                    </tr>
+                    <!-- Midterm -->
+                    <tr>
+                        <td>Midterm</td>
+                        <td>{{ marks.midterm }}</td>
+                        <td>{{ achieved_marks_per_course[course].midterm }}</td>
+                        <td class="compact-text remarks-highlight">{{ remarks_per_course[course].midterm }}</td>
+                    </tr>
+                    <!-- Final Term -->
+                    <tr>
+                        <td>Final Term</td>
+                        <td>{{ marks.finalterm }}</td>
+                        <td>{{ achieved_marks_per_course[course].finalterm }}</td>
+                        <td class="compact-text remarks-highlight">{{ remarks_per_course[course].finalterm }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>

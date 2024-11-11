@@ -1,0 +1,142 @@
+﻿Course_cat,Course_no,Title,credit_hours,prerequisite,no_of_prereq,average_GPA,GPA_standard_deviation,failure_probability,lab_course,difficulty_level,difficulty_level_encoded
+bio,bio231,Fundamentals of Genetics,4,none,0,2.93,0.96,0.06,1,Moderate,3
+bio,bio310,Introduction to Bioinformatics,4,none,0,2.92,0.82,0.03,1,Moderate,3
+bsc,bsc208,Essentials of Genetics,3,none,0,2.67,0.61,0,0,Moderate,3
+csc,csc101,Introduction to Computing,3,none,0,2.46,1.25,0.16,1,Difficult,4
+csc,csc102,Discrete Structures,3,none,0,2.56,1.05,0.1,0,Difficult,4
+csc,csc103,Programming Fundamentals,4,none,0,2.4,1.25,0.16,1,Difficult,4
+csc,csc110,Professional Practices for IT,3,none,0,2.76,0.91,0.06,0,Moderate,3
+csc,csc112,Algorithms and Data Structures,4,csc141,1,2.37,1.16,0.14,1,Difficult,4
+csc,csc201,Design and Analysis of Algorithm,3,csc103,1,2.01,1.1,0.16,0,Difficult,4
+csc,csc211,Data Structures,4,csc103,1,2.22,1.19,0.17,1,Difficult,4
+csc,csc221,Computer Organization and Assembly Language,4,csc103,1,2.42,1.04,0.1,1,Difficult,4
+csc,csc241,Object Oriented Programming,4,csc103,1,2.64,1.14,0.1,1,Difficult,4
+csc,csc244,Object Oriented Concepts and Programming,4,"CSC105,CSC106",2,2,0,0,0,Easy,2
+csc,csc245,Object Oriented Concepts and Programming-Lab,1,"CSC105,CSC106",2,2.3,0,0,0,Easy,2
+csc,csc253,Computer Graphics,3,csc103,1,2.45,1,0.07,0,Difficult,4
+csc,csc270,Database Systems,4,csc211,1,3.48,0.39,0,0,Very Easy,1
+csc,csc271,Database Systems,4,csc112,1,2.6,0.91,0.06,1,Difficult,4
+csc,csc291,Software Engineering I,3,none,0,2.28,0.91,0.08,0,Difficult,4
+csc,csc301,Design and Analysis of Algorithms,3,csc211,1,2.74,1.12,0.09,0,Difficult,4
+csc,csc303,Mobile Application Development,3,csc241,1,2.58,1.09,0.1,1,Difficult,4
+csc,csc304,Multimedia Entertainment and Gaming,3,none,0,2.94,0.72,0.02,0,Moderate,3
+csc,csc307,Graph Theory,3,csc102,1,2.75,1.14,0.12,0,Difficult,4
+csc,csc312,Automata Theory,3,csc102,1,2.35,1.05,0.08,0,Difficult,4
+csc,csc314,Introduction to Machine Learning,3,none,0,2.46,0.87,0.06,0,Difficult,4
+csc,csc321,Microprocessor and Assembly Language,3,eee241,1,2.81,0.86,0.04,1,Moderate,3
+csc,csc322,Operating System Concepts,3,csc211,1,2.38,1.07,0.11,1,Difficult,4
+csc,csc328,Distributed Computing,3,none,0,2.92,0.98,0.07,0,Moderate,3
+csc,csc330,E-Commerce,4,none,0,3.01,0.83,0.04,1,Moderate,3
+csc,csc331,Digital Image Processing,3,"mth231, mth262",2,3.39,0.64,0.01,0,Moderate,3
+csc,csc332,Network Security,3,csc103,1,1.19,1.06,0.34,0,Very Difficult,5
+csc,csc334,Distributed Computing,4,csc232,1,1.5,2.12,0.5,0,Very Difficult,5
+csc,csc336,Web Technologies,4,csc241,1,2.64,1.02,0.08,1,Difficult,4
+csc,csc339,Computer Communication & Networks,4,none,0,2.71,0.96,0.07,1,Difficult,4
+csc,csc340,Computer Networks,4,none,0,3.06,0.78,0.02,0,Moderate,3
+csc,csc347,Computational Intelligence,3,csc241,1,2.75,0.71,0,0,Moderate,3
+csc,csc348,Information Systems Modeling and Design,3,none,0,1.68,1.24,0.3,0,Very Difficult,5
+csc,csc350,Topics in Computer Science I,3,none,0,2.5,1.11,0.09,0,Difficult,4
+csc,csc353,Computer Graphics,3,MTH231,1,3.43,0.45,0,1,Very Easy,1
+csc,csc354,Machine Learning,3,none,0,2.78,0.9,0.04,0,Moderate,3
+csc,csc356,Human Computer Interaction,3,none,0,2.9,0.8,0.04,1,Moderate,3
+csc,csc371,Database Systems I,4,csc241,1,2.67,0.97,0.07,1,Difficult,4
+csc,csc392,Software Engineering II,3,csc291,1,2.39,0.89,0.06,0,Difficult,4
+csc,csc402,Database Systems II,3,csc371,1,3.15,0.22,0,0,Very Easy,1
+csc,csc410,Professional Practices,3,none,0,3.28,0.82,0.03,0,Moderate,3
+csc,csc412,Visual Programming,3,csc241,1,2.6,1.21,0.14,1,Difficult,4
+csc,csc432,Information Security,3,none,0,2.55,0.58,0.02,0,Moderate,3
+csc,csc441,Compiler Construction,4,csc312,1,2.31,1.07,0.12,1,Difficult,4
+csc,csc443,Scripting Languages,3,CSC336,1,2.43,0.95,0.06,0,Difficult,4
+csc,csc444,Visual Programming,3,csc103,1,2.34,1.11,0.12,0,Difficult,4
+csc,csc445,Modern Programming Languages,3,csc241,1,2.82,1.16,0.08,0,Difficult,4
+csc,csc446,Advanced Object Oriented Programming,3,csc241,1,2.3,0,0,0,Easy,2
+csc,csc447,Enterprise Systems Development,3,csc241,1,3.59,0.42,0,0,Very Easy,1
+csc,csc448,Data Visualization,3,none,0,2.74,0.86,0.02,0,Moderate,3
+csc,csc454,Pattern Recognition,3,csc354,1,2.94,0.86,0.03,0,Moderate,3
+csc,csc455,Computer Vision,3,csc253,1,3.09,0.9,0.03,0,Moderate,3
+csc,csc456,Human Computer Interaction ,3,none,0,2.53,0.86,0.04,0,Difficult,4
+csc,csc461,Introduction to Data Science,3,csc462,1,2.38,0.91,0.08,0,Difficult,4
+csc,csc462,Artificial Intelligence,3,csc102,1,2.65,1.1,0.11,1,Difficult,4
+csc,csc471,Distributed Database System,3,csc270,1,2.56,0.98,0.07,0,Difficult,4
+csc,csc475,Numerical Computing,3,mth104,1,2.7,0.97,0.06,0,Difficult,4
+csc,csc478,Data Warehousing,3,none,0,2.8,0.91,0.02,0,Moderate,3
+csc,csc479,Data Mining,3,none,0,2.07,1.14,0.15,0,Difficult,4
+csc,csc483,Topics in Computer Science II,3,none,0,2.65,1.06,0.07,0,Difficult,4
+csc,csc494,Software Project Management,3,csc291,1,2.45,0.98,0.08,0,Difficult,4
+csc,csc496,Data Warehousing and Data Mining,3,csc371,1,2.88,0.85,0.04,1,Moderate,3
+csc,csc498,Senior Design Project I,2,"csc241, csc270, csc291",3,3.18,0.95,0.06,0,Moderate,3
+csc,csc499,Senior Design Project II,4,csc498,1,2.22,1.63,0.33,0,Very Difficult,5
+csc,csc536,Web Technologies and Programming,3,csc103,1,2.16,1.41,0.23,1,Very Difficult,5
+csc,csc571,Distributed Database Systems for Business,3,none,0,2.02,1.11,0.12,0,Difficult,4
+csc,csc581,Business System Development,3,none,0,2.98,0.71,0,0,Moderate,3
+csc,csc596,Software Requirement Engineering,3,none,0,1.57,1.4,0.33,0,Very Difficult,5
+csd,csd100,Fundamentals of Computer Programming,4,none,0,3.7,0,0,0,Very Easy,1
+csd,csd101,Discrete Structures,3,none,0,4,0,0,0,Very Easy,1
+csd,csd102,Introduction to Information and Communication Technologies,4,none,0,3.7,0,0,0,Very Easy,1
+csd,csd200,Object Oriented Concepts and Programming,4,csd100,1,3,0,0,0,Very Easy,1
+csd,csd201,Introduction to Software Engineering,3,none,0,1.7,0,0,0,Easy,2
+csd,csd202,Data Structures and Algorithms,4,csd100,1,2.3,0,0,0,Easy,2
+csd,csd203,Computer Organization and Assembly Language,4,csd100,1,3.3,0,0,0,Very Easy,1
+csd,csd204,Computer System Architecture,3,csd203,1,3,0,0,0,Very Easy,1
+csd,csd205,Design and Analysis of Algorithms,4,csd100,1,3.7,0,0,0,Very Easy,1
+cse,cse291,Introduction to Software Engineering,4,none,0,2.54,1,0.09,1,Difficult,4
+cse,cse299,Software Construction,3,csc112,1,3.05,0.83,0.03,1,Moderate,3
+cse,cse302,Software Quality Engineering,3,cse305,1,2.68,0.82,0.03,0,Moderate,3
+cse,cse303,Software Design and Architecture,3,cse305,1,2.46,0.87,0.06,0,Difficult,4
+cse,cse304,Formal Methods in Software Engineering,3,csc291,1,2.43,0.89,0.06,1,Difficult,4
+cse,cse305,Software Requirement Engineering,3,none,0,2.17,0.96,0.09,0,Difficult,4
+cse,cse330,E-Commerce,3,none,0,3.15,0.21,0,0,Very Easy,1
+cse,cse333,Software Process Improvement,3,none,0,2.28,0.85,0.04,0,Difficult,4
+cse,cse350,Topics in Software Engineering I,3,none,0,2.56,1.09,0.09,0,Difficult,4
+cse,cse354,Design Patterns,3,none,0,2.92,0.68,0.01,1,Moderate,3
+cse,cse355,Software Testing,3,none,0,2.53,0.87,0.06,1,Difficult,4
+cse,cse356,Formal Methods,3,cse291,1,2.1,0.56,0.01,0,Easy,2
+cse,cse455,Software Testing,3,cse302,1,2.64,0.89,0.06,1,Difficult,4
+cse,cse483,Topics in Software Engineering II,3,none,0,2.71,0.92,0.04,0,Moderate,3
+cse,cse494,Software Project Management,3,csc291,1,2.87,0.9,0.06,1,Moderate,3
+cse,cse498,Senior Design Project I,2,"csc241, csc270, csc291",3,3.02,0.93,0.05,0,Moderate,3
+cse,cse499,Senior Design Project II,4,csc498,1,2.37,1.6,0.3,0,Very Difficult,5
+eee,eee121,Electric Circuits Analysis I,4,none,0,2.18,1.3,0.22,1,Very Difficult,5
+eee,eee119,Circuits and Electronics,4,none,0,3.7,0,0,0,Very Easy,1
+eee,eee231,Electronics I,4,eee121,1,2.39,1.14,0.14,1,Difficult,4
+eee,eee241,Digital Logic Design,4,none,0,2.57,1.17,0.12,0,Difficult,4
+eee,eee440,Computer Architecture,3,csc221,1,2.37,0.98,0.07,0,Difficult,4
+env,env230,Environmental Monitoring,3,none,0,3.17,0.88,0.04,1,Moderate,3
+hum,hum100,English Comprehension and Composition,3,none,0,2.93,1.11,0.1,0,Difficult,4
+hum,hum102,Report Writing Skills,3,hum100,1,3.05,0.81,0.04,0,Moderate,3
+hum,hum103,Communication Skills,3,hum100,1,2.99,0.98,0.07,0,Moderate,3
+hum,hum104,Functional English,3,none,0,3.19,1.29,0.13,0,Difficult,4
+hum,hum110,Islamic Studies,3,none,0,2.93,1.17,0.11,0,Difficult,4
+hum,hum111,Pakistan Studies,3,none,0,3.22,0.84,0.04,0,Moderate,3
+hum,hum112,Islamic Studies,2,none,0,3.03,1.3,0.13,0,Difficult,4
+hum,hum113,Ideology and Constitution of Pakistan,3,none,0,3,0.94,0,0,Moderate,3
+hum,hum114,Ethics,3,none,0,2.81,1.11,0.1,0,Difficult,4
+hum,hum130,Fundamentals of Sociology,2,none,0,3.17,0.23,0,0,Very Easy,1
+hum,hum220,Introduction to Psychology,3,none,0,2.72,1.06,0.07,0,Difficult,4
+hum,hum320,Introduction to Sociology,3,none,0,3.13,0.75,0.02,0,Moderate,3
+hum,hum430,French,3,none,0,3.26,0.98,0.05,0,Moderate,3
+hum,hum431,German,3,none,0,2.12,1.04,0.12,0,Difficult,4
+hum,hum432,Arabic,3,none,0,2.75,1.6,0.24,0,Very Difficult,5
+hum,hum434,Chinese,3,none,0,2.85,1.04,0.05,0,Moderate,3
+mgt,mgt101,Introduction to Management,3,none,0,2.85,0.96,0.06,0,Moderate,3
+mgt,mgt131,Financial Accounting,3,none,0,2.65,1.04,0.07,0,Difficult,4
+mgt,mgt210,Fundamentals of Marketing,3,none,0,3.2,0.81,0.04,0,Moderate,3
+mgt,mgt350,Human Resource Management,3,mgt101,1,2.99,0.73,0.02,0,Moderate,3
+mgt,mgt403,Entrepreneurship,3,mgt101,1,2.99,0.85,0.03,0,Moderate,3
+mgt,mgt431,German,3,none,0,2,0,0,0,Easy,2
+mth,mth091,Pre-Calculus I,0,none,0,1.61,1.23,0.38,0,Very Difficult,5
+mth,mth092,Pre-Calculus II,0,none,0,1.46,1.02,0.42,0,Very Difficult,5
+mth,mth100,Mathematics I ,3,none,0,1.84,1.41,0.36,0,Very Difficult,5
+mth,mth101,Calculus I ,3,none,0,2.06,1.28,0.25,0,Very Difficult,5
+mth,mth104,Calculus and Analytical Geometry,3,none,0,1.91,1.21,0.22,0,Very Difficult,5
+mth,mth105,Multivariable Calculus,3,mth104,1,2,1.22,0.19,0,Very Difficult,5
+mth,mth231,Linear Algebra,3,none,0,2.36,1.14,0.11,0,Difficult,4
+mth,mth242,Differential Equations,3,mth105,1,1.96,1.37,0.25,0,Very Difficult,5
+mth,mth262,Statistics and Probability Theory,3,none,0,2.17,1.18,0.15,0,Difficult,4
+mth,mth375,Numerical Computing,3,"csc141 ,mth104",2,2.28,1.13,0.12,0,Difficult,4
+mth,mth467,Operation Research,3,none,0,2.79,0.96,0.05,0,Moderate,3
+phy,phy100,Mechanics and Thermodynamics,4,none,0,2.4,0.93,0.09,1,Difficult,4
+phy,phy120,"Electricity, Magnetism and Optics",4,none,0,2.94,0.55,0,0,Moderate,3
+phy,phy121,Applied Physics for Engineers,4,none,0,2.33,1.26,0.19,1,Difficult,4
+phy,phy124,Applied Physics,3,none,0,2.92,1.37,0.16,0,Difficult,4
+phy,phy229,Modern Physics,4,phy120,1,2.5,0.28,0,0,Easy,2

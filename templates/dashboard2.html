@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Dashboard</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            min-width: 100vw;
+            min-height: 100vh;
+            background-color: #F5F5F5;
+        }
+
+        main {
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            word-break: 100vw;
+            display: flex;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 20%;
+            padding: 0;
+            margin: 0;
+            background-color: #F5F5F5;
+        }
+
+        .home {
+            height: 100%;
+            width: 80%;
+        }
+
+        .logo {
+            height: 10%;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .navmenu {
+            height: 60%;
+            justify-content: start;
+            text-align: start;
+            align-items: start;
+        }
+
+        .navmenu ul {
+            height: 100%;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+            gap: 5%;
+
+        }
+
+        .navmenu ul li button {
+            height: 40px;
+            width: 150px;
+            background-color: transparent;
+            border: none;
+            text-align: start;
+        }
+
+        .navmenu ul li button:hover {
+            background-color: black;
+            color: white;
+            transition: ease;
+        }
+
+        .logout {
+            height: 20%;
+            display: flex;
+            justify-content: start;
+            align-items: end;
+            text-align: start;
+        }
+
+        .logout button {
+            height: 50px;
+            width: 100px;
+            background-color: transparent;
+            color: black;
+            border: none;
+        }
+
+        .topnav {
+            height: 12%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .title {
+            height: 100%;
+            width: 50%;
+            display: flex;
+            justify-content: start;
+            text-align: center;
+        }
+
+        .profile {
+            height: 100%;
+            width: 50%;
+            display: flex;
+            justify-content: end;
+            padding: 7px 20px;
+        }
+
+        .circle {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            background-color: blanchedalmond;
+        }
+
+        .circle img {
+            object-fit: fill;
+            height: 100%;
+            width: 100%;
+        }
+
+        .content {
+            height: 88%;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .content-top {
+            height: 45%;
+            width: 100%;
+            padding: 10px 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .content-bottom {
+            height: 45%;
+            width: 100%;
+            padding: 30px 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .content-top-left {
+            height: 100%;
+            width: 58%;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            justify-content: space-between;
+            display: flex;
+            padding: 10px;
+            gap: 10px;
+        }
+
+        .student-profile {
+            height: 50%;
+            width: 30%;
+            background-color: rgb(243, 216, 213);
+            border-radius: 20px;
+
+        }
+
+        .student-profile img {
+            height: 100%;
+            width: 100%;
+            object-fit: scale-down;
+        }
+
+        .student-summary {
+            height: 80%;
+            width: 50%;
+        }
+
+        .content-top-right {
+            height: 100%;
+            width: 30%;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+
+        .content-bottom-left {
+            height: 100%;
+            width: 60%;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            justify-content: space-between;
+        }
+
+        .content-bottom-right {
+            height: 100%;
+            width: 30%;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="sidenav">
+            <div class="logo">
+                <h1>Student 360</h1>
+            </div>
+            <div class="navmenu">
+                <ul>
+                    <li><button>Dashboard</button></li>
+                    <li><button>Result Card</button></li>
+                    <li><button>Academic Planning</button></li>
+                    <li><button>Performance Track</button></li>
+                    <li><button>Chat Bot</button></li>
+                </ul>
+            </div>
+            <div class="logout">
+                <button>Logout</button>
+            </div>
+        </section>
+        <section class="home">
+            <div class="topnav">
+                <div class="title">
+                    <h1>Student Dashboard</h1>
+                </div>
+                <div class="profile">
+                    <div class="circle">
+                        <img src="static/source/comsats2_bg.jpeg" alt="profile">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content-top">
+                    <div class="content-top-left">
+                        <div class="student-profile">
+                            <img src="assets/profile.png" alt="profile">
+                        </div>
+                        <div class="student-summary">
+
+                        </div>
+                    </div>
+                    <div class="content-top-right"></div>
+                </div>
+                <div class="content-bottom">
+                    <div class="content-bottom-left"></div>
+                    <div class="content-bottom-right"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

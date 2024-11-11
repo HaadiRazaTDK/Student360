@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Student Dashboard{% endblock %}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2c3e50;
+            /* Dark background */
+            color: #ecf0f1;
+            /* Light text for readability */
+        }
+
+        /* Navbar styles */
+        .navbar {
+            width: 100%;
+            padding: 15px 40px;
+            position: fixed;
+            top: 0;
+            background: rgba(255, 255, 255, 0.1);
+            /* Transparent glassmorphism */
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            /* Hover effect */
+            color: #1abc9c;
+        }
+
+        .navbar-right {
+            float: right;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #34495e;
+            /* Darker dropdown background */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            min-width: 200px;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: #ecf0f1;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            /* Hover effect */
+            color: #1abc9c;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            /* Show dropdown when hovering */
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.2);
+            /* Hover effect for button */
+        }
+
+        /* Container for page content */
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 120px auto;
+            /* Adjust margin for fixed navbar */
+            background-color: #34495e;
+            /* Darker container background */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* For links in the content */
+        a {
+            color: #1abc9c;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #16a085;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <ul>
+            <li><a href="{{ url_for('main.dashboard_bp.dashboard') }}">Dashboard</a></li>
+            <li><a href="{{url_for('main.result_card_bp.result_card')}}">Result Card</a></li>
+            <li>
+                <a href="#">Academic Planning</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('main.academic_performance_forcast_bp.academic_performance_forecast') }}">Academic
+                        Performance Forecast</a>
+                    <a href="{{ url_for('main.timely_graduation_forecast_bp.timely_graduation_forecast') }}">Timely
+                        Graduation Forecast</a>
+                    <a href="{{ url_for('main.challenging_courses_forecast_bp.challenging_courses_forecast') }}">Challenging
+                        Courses Forecast</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">Performance Track</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('main.performance_evaluation_metrics_bp.performance_evaluation_metrics') }}">Performance
+                        Evaluation Metrics</a>
+                    <a href="{{ url_for('main.tracking_GPA_target_bp.tracking_GPA_target') }}">Tracking GPA Target</a>
+                    <a href="{{ url_for('main.prerequisite_courses_impact_bp.prerequisite_courses_impact') }}">Prerequisite
+                        Courses Impact</a>
+                </div>
+            </li>
+            <li><a href="#">LLM Chatbot</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="{{ url_for('main.logout_bp.logout') }}">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        {% block content %}
+        <!-- Page-specific content will go here -->
+        {% endblock %}
+    </div>
+
+</body>
+
+</html>

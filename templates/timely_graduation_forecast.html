@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timely Graduation Forecast</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            width: 100%;
+            background: url('static/source/IMG_20240216_172123.jpg') no-repeat center center/cover;
+            color: #fff;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            width: 100%;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar ul li {
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .navbar ul li a:hover {
+            color: #1abc9c;
+        }
+
+        /* Dropdown styles */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1abc9c;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            min-width: 200px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: 500;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #16a085;
+        }
+
+        .navbar ul li:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Data Card Container */
+        .data-card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 90%;
+            max-width: 1200px;
+            margin: 150px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .data-card {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            max-width: 30%;
+        }
+
+        .data-card h2 {
+            font-size: 1.5rem;
+            color: #1abc9c;
+            margin-bottom: 15px;
+        }
+
+        .data-card span {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        .list-container {
+            width: 90%;
+            max-width: 1200px;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 12px;
+            margin: 20px 0;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .list-container h2 {
+            font-size: 1.8rem;
+            color: #1abc9c;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .list-container ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .list-container ul li {
+            padding: 12px;
+            font-size: 1rem;
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .list-container ul li:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 768px) {
+            .data-card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .data-card {
+                margin: 15px 0;
+                width: 90%;
+            }
+
+            .list-container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <ul>
+            <li><a href="{{ url_for('main.dashboard_bp.dashboard') }}">Dashboard</a></li>
+            <li><a href="{{url_for('main.result_card_bp.result_card')}}">Result Card</a></li>
+            <li>
+                <a href="#">Academic Planning</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('main.academic_performance_forcast_bp.academic_performance_forecast') }}">Academic
+                        Performance Forecast</a>
+                    <a href="{{ url_for('main.timely_graduation_forecast_bp.timely_graduation_forecast') }}">Timely
+                        Graduation Forecast</a>
+                    <a href="{{ url_for('main.challenging_courses_forecast_bp.challenging_courses_forecast') }}">Challenging
+                        Courses Forecast</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">Performance Track</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('main.performance_evaluation_metrics_bp.performance_evaluation_metrics') }}">Performance
+                        Evaluation Metrics</a>
+                    <a href="{{ url_for('main.tracking_GPA_target_bp.tracking_GPA_target') }}">Tracking GPA Target</a>
+                    <a href="{{ url_for('main.prerequisite_courses_impact_bp.prerequisite_courses_impact') }}">Prerequisite
+                        Courses Impact</a>
+                </div>
+            </li>
+            <li><a href="#">LLM Chatbot</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="{{ url_for('main.logout_bp.logout') }}">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Data Card Container -->
+    <div class="data-card-container">
+        <!-- Graduation Status Card -->
+        <div class="data-card">
+            <h2>Graduation Status</h2>
+            <span>{{ graduation_status }}</span>
+        </div>
+
+        <!-- Confidence Level Card -->
+        <div class="data-card">
+            <h2>Confidence Level</h2>
+            <span>{{ confidence }}</span>
+        </div>
+
+        <!-- Current Semester Card -->
+        <div class="data-card">
+            <h2>Current Semester</h2>
+            <span>{{ current_semester }}</span>
+        </div>
+    </div>
+
+    <!-- Factors List -->
+    <div class="list-container">
+        <h2>Factors</h2>
+        <ul>
+            {% for factor in factors %}
+            <li>{{ factor }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Warnings List -->
+    <div class="list-container">
+        <h2>Warnings</h2>
+        <ul>
+            {% for warning in warnings %}
+            <li>{{ warning }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Suggestions List -->
+    <div class="list-container">
+        <h2>Suggestions</h2>
+        <ul>
+            {% for suggestion in suggestions %}
+            <li>{{ suggestion }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+from flask import Blueprint
+
+from routes.academic_performance_forecast import academic_performance_forcast_bp
+from routes.timely_graduation_forecast import timely_graduation_forecast_bp
+from routes.challenging_courses_forecast import challenging_courses_forecast_bp
+from routes.performance_evaluation_metrics import performance_evaluation_metrics_bp
+from routes.tracking_GPA_target import tracking_GPA_target_bp
+from routes.Prerquisite_course_impact import prerequisite_courses_impact_bp
+from routes.dashboard import dashboard_bp
+from routes.get_courses import get_courses_bp
+from routes.error_handler import error_handler_bp
+from routes.login import login_bp
+from routes.logout import logout_bp
+from routes.home import home_bp
+from routes.resultcard import result_card_bp
+
+main_bp = Blueprint('main', __name__)
+
+main_bp.register_blueprint(academic_performance_forcast_bp)
+main_bp.register_blueprint(timely_graduation_forecast_bp)
+main_bp.register_blueprint(challenging_courses_forecast_bp)
+main_bp.register_blueprint(performance_evaluation_metrics_bp)
+main_bp.register_blueprint(tracking_GPA_target_bp)
+main_bp.register_blueprint(prerequisite_courses_impact_bp)
+main_bp.register_blueprint(dashboard_bp)
+main_bp.register_blueprint(get_courses_bp)
+main_bp.register_blueprint(error_handler_bp)
+main_bp.register_blueprint(login_bp)
+main_bp.register_blueprint(logout_bp)
+main_bp.register_blueprint(home_bp)
+main_bp.register_blueprint(result_card_bp)

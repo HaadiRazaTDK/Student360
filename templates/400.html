@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 400 - Bad Request</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .error-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .error-container h1 {
+            font-size: 4em;
+            color: #e74c3c;
+        }
+
+        .error-container p {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .error-container a {
+            text-decoration: none;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .error-container a:hover {
+            background-color: #2980b9;
+        }
+
+        .error-container img {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-container">
+        <img src="{{ url_for('static', filename='source/400.jpg') }}" alt="Error 400">
+        <h1>Oops! Bad Request (400)</h1>
+        <p>{{ error.description }}</p>
+        <p>Please check the details and try again, or go back to the homepage.</p>
+        <a href="{{ url_for('home') }}">Go Back Home</a>
+    </div>
+</body>
+
+</html>
